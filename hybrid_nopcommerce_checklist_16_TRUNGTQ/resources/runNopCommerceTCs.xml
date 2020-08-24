@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Nop Commerce" parallel="false">
+  <test name="Run on Firefox">
+    <classes>
+      <class name="demo.nopcommerce.user.Register"/>
+      <class name="demo.nopcommerce.user.Login"/>
+      <class name="demo.nopcommerce.user.MyAccount"/> 
+      <class name="demo.nopcommerce.user.Order"/>
+      <class name="demo.nopcommerce.user.Search_AdvanceSearch"/>
+      <class name="demo.nopcommerce.user.Sort_Display_Paging"/>
+      <class name="demo.nopcommerce.user.Wishlist_Compare_RecentView"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Run on Chrome">
+    <classes>
+      <class name="demo.nopcommerce.user.Register"/>
+      <class name="demo.nopcommerce.user.Login"/>
+      <class name="demo.nopcommerce.user.MyAccount"/>
+      <class name="demo.nopcommerce.user.Order"/>
+      <class name="demo.nopcommerce.user.Search_AdvanceSearch"/>
+      <class name="demo.nopcommerce.user.Sort_Display_Paging"/>
+      <class name="demo.nopcommerce.user.Wishlist_Compare_RecentView"/>
+    </classes>
+    </test>
+</suite> <!-- Suite -->
