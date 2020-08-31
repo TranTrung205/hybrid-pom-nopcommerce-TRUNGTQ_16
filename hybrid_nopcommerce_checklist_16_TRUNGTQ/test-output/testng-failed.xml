@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Nop Commerce]">
+  <test name="Run on Chrome(failed)">
+    <classes>
+      <class name="DRY.Login01_Register_and_Login">
+        <methods>
+          <include name="TC01_Register_successfully"/>
+          <include name="Login"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- DRY.Login01_Register_and_Login -->
+    </classes>
+  </test> <!-- Run on Chrome(failed) -->
+</suite> <!-- Failed suite [Nop Commerce] -->

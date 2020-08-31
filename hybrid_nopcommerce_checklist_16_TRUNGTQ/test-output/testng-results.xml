@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Nop Commerce" duration-ms="17672" started-at="2020-08-31T17:15:13Z" finished-at="2020-08-31T17:15:31Z">
+    <groups>
+    </groups>
+    <test name="Run on Firefox" duration-ms="17672" started-at="2020-08-31T17:15:13Z" finished-at="2020-08-31T17:15:31Z">
+      <class name="DRY.Login01_Register_and_Login">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DRY.Login01_Register_and_Login@2ac1fdc4]" name="beforeTest" is-config="true" duration-ms="6768" started-at="2020-09-01T00:15:13Z" finished-at="2020-09-01T00:15:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="TC01_Register_successfully()[pri:0, instance:DRY.Login01_Register_and_Login@2ac1fdc4]" name="TC01_Register_successfully" duration-ms="4641" started-at="2020-09-01T00:15:20Z" finished-at="2020-09-01T00:15:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC01_Register_successfully -->
+        <test-method status="PASS" signature="TC02_Login()[pri:0, instance:DRY.Login01_Register_and_Login@2ac1fdc4]" name="TC02_Login" duration-ms="6246" started-at="2020-09-01T00:15:25Z" finished-at="2020-09-01T00:15:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC02_Login -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:DRY.Login01_Register_and_Login@2ac1fdc4]" name="afterTest" is-config="true" duration-ms="1" started-at="2020-09-01T00:15:31Z" finished-at="2020-09-01T00:15:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- DRY.Login01_Register_and_Login -->
+    </test> <!-- Run on Firefox -->
+  </suite> <!-- Nop Commerce -->
+</testng-results>
