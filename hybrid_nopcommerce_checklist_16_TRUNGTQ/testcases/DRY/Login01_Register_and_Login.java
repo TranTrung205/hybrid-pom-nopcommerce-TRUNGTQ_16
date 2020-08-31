@@ -26,6 +26,7 @@ public class Login01_Register_and_Login {
 		// System.setProperty("webdriver.chrome.driver",
 		// "./BrowserDrivers/chromedriver.exe");
 		// driver = new ChromeDriver();
+		//comment
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
