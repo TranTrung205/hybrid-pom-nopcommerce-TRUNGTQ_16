@@ -16,10 +16,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class Login01_Register_and_Login {
+import commons.AbstractPage;
+
+public class LV01_Login01_Register_and_Login {
 	WebDriver driver;
 	WebDriverWait wait;
-
 	@BeforeTest
 	public void beforeTest() {
 		System.setProperty("webdriver.geckodriver.driver", "./BrowserDrivers/geckodriver.exe");
@@ -37,6 +38,7 @@ public class Login01_Register_and_Login {
 	@Test
 	public void TC01_Register_successfully() {
 		driver.findElement(By.xpath("//a[@class='ico-register']")).click();
+		
 		driver.findElement(By.xpath("//label[contains(text(),'Male')]")).click();
 		// wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//input[@id='FirstName']"))));
 		driver.findElement(By.xpath("//input[@id='FirstName']")).sendKeys("Corona ABC");
