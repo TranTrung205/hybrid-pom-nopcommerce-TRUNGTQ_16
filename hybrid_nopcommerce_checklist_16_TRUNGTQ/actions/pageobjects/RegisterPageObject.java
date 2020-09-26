@@ -1,8 +1,6 @@
-/**
- * 
- */
-/**
- * @author Trung-PC
- *
- */
+
 package pageobjects;
+
+public class RegisterPageObject {
+
+}

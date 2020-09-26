@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import commons.AbstractPage;
 
-public class LV02_Login01_Register_and_Login_AbstractPage_01 {
+public class LV02_Register_and_Login_AbstractPage_01 {
 	String projectFolder = System.getProperty("user.dir");
 	WebDriver driver;
 	WebDriverWait wait;

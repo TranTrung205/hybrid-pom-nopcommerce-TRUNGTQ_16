@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 
 import commons.AbstractPage;
 
-public class LV01_Login01_Register_and_Login {
+public class LV01_Register_and_Login {
 	WebDriver driver;
 	WebDriverWait wait;
 	@BeforeTest
