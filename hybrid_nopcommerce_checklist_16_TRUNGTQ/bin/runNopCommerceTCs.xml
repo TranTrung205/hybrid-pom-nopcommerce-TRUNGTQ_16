@@ -3,8 +3,8 @@
 	<test name="Run on Firefox">
 		<classes>
 			<!-- <class name="DRY.LV01_Login01_Register_and_Login" /> -->
-			<class
-				name="DRY.LV02_Login01_Register_and_Login_AbstractPage_01" />
+			<!-- <class	name="DRY.LV02_Login01_Register_and_Login_AbstractPage_01" /> -->
+				<class	name="demo.nopcommerce.user.LV03_Register_and_Login_Page_Object" />
 		</classes>
 	</test>
 	<!-- <test name="Run on Chrome"> <classes> <class name="demo.nopcommerce.user.Register" 

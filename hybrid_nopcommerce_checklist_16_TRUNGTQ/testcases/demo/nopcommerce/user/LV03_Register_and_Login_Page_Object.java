@@ -3,6 +3,7 @@ package demo.nopcommerce.user;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -24,14 +25,21 @@ public class LV03_Register_and_Login_Page_Object extends AbstractPage {
 	LoginPageObject loginpage;
 	RegisterPageObject registerpage;
 	CustomerInfoPageObject customerinfopage;
+	String email = "test0510202001@gmail.com";
+	String password = "trungtran9878";
+	String firstname = "Corona HAHA";
+	String lastname = "Virus HAHA";
+	String day = "10";
+	String month = "January";
+	String year = "1990";
+	String company = "Corona virus 20";
 
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.gecko.driver", projectFolder + "./BrowserDrivers/geckodriver.exe");
-		// System.setProperty("webdriver.chrome.driver",
-		// "./BrowserDrivers/chromedriver.exe");
-		// driver = new ChromeDriver();
-		driver = new FirefoxDriver();
+		//System.setProperty("webdriver.gecko.driver", projectFolder + "./BrowserDrivers/geckodriver.exe");
+		System.setProperty("webdriver.chrome.driver", projectFolder + "./BrowserDrivers/chromedriver.exe");
+		driver = new ChromeDriver();
+		//driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://demo.nopcommerce.com/");
@@ -39,87 +47,53 @@ public class LV03_Register_and_Login_Page_Object extends AbstractPage {
 
 	@Test
 	public void TC01_Register_successfully() {
-		homepage = new HomePageObject();
+		homepage = new HomePageObject(driver);
 		homepage.clickToRegisterLink();
-
-		registerpage = new RegisterPageObject();
+		registerpage = new RegisterPageObject(driver);
 		registerpage.clickToGenderMaleRadioBtn();
-		clickToElement(driver, "//label[contains(text(),'Male')]");
-
-		registerpage.inputToFirstNameTextBox(firstName);
-		sendkeyToElement(driver, "//input[@id='FirstName']", "Corona BCD");
-		registerpage.inputToLastNameTextBox(LastName);
-		sendkeyToElement(driver, "//input[@id='LastName']", "Virus ABC");
-
-		registerpage.selectDayDropdown("10");
-		selectItemInDropdown(driver, "//select[@name='DateOfBirthDay']", "10");
-		registerpage.selectMonthDropdown("January");
-		selectItemInDropdown(driver, "//select[@name='DateOfBirthMonth']", "January");
-		registerpage.selectYearDropdown("1990");
-		selectItemInDropdown(driver, "//select[@name='DateOfBirthYear']", "1990");
-
-		registerpage.inputToCompany("Corona virus 20");
-		sendkeyToElement(driver, "//input[@id='Company']", "Corona virus 20");
-		registerpage.inputToEmail("test26092020@gmail.com");
-		sendkeyToElement(driver, "//input[@id='Email']", "test26092020@gmail.com");
-		registerpage.inputToPassword("trungtran26092020");
-		sendkeyToElement(driver, "//input[@id='Password']", "trungtran26092020");
-		registerpage.inputToConfirmPassword("trungtran9878");
-		sendkeyToElement(driver, "//input[@id='ConfirmPassword']", "trungtran9878");
+		registerpage.inputToFirstNameTextBox(firstname);
+		registerpage.inputToLastNameTextBox(lastname);
+		registerpage.selectDayDropdown(day);
+		registerpage.selectMonthDropdown(month);
+		registerpage.selectYearDropdown(year);
+		registerpage.inputToCompany(company);
+		registerpage.inputToEmail(email);
+		registerpage.inputToPassword(password);
+		registerpage.inputToConfirmPassword(password);
 		registerpage.clickToRegisterBtn();
-		clickToElement(driver, "//input[@id='register-button']");
-
 		registerpage.getRegisterSuccessMessage();
 		Assert.assertEquals(registerpage.getRegisterSuccessMessage(), "Your registration completed");
-
 		registerpage.clickLogOutLink();
-		clickToElement(driver, "//a[@class='ico-logout']");
-
-		homepage = new HomePageObject();
+		homepage = new HomePageObject(driver);
 	}
 
 	@Test
 	public void TC02_Login() {
 		homepage.clickToLoginLink();
-		loginpage = new LoginPageObject();
-		clickToElement(driver, "//a[@class='ico-login']");
-
-		loginpage.inputToEmailTextbox("test27092020@gmail.com");
-		sendkeyToElement(driver, "//input[@id='Email']", "test26092020@gmail.com");
-		loginpage.inputToEmailTextbox("trungtran9878");
-		sendkeyToElement(driver, "//input[@id='Password']", "trungtran9878");
-
+		loginpage = new LoginPageObject(driver);
+		loginpage.inputToEmailTextbox(email);
+		loginpage.inputToPasswordTextbox(password);
 		loginpage.clickToLoginButton();
-		clickToElement(driver, "//input[@class='button-1 login-button']");
-
-		homepage = new HomePageObject();
+		homepage = new HomePageObject(driver);
 		Assert.assertTrue(homepage.ismyAccountLinkDisplayed());
 		Assert.assertTrue(homepage.islogoutLinkDisplayed());
-
 	}
 
 	@Test
 	public void TC03_View_My_Account() {
 		homepage.clickToMyAccountLink();
-		customerinfopage = new CustomerInfoPageObject();
-		clickToElement(driver, "//a[@class='ico-account']");
-
+		customerinfopage = new CustomerInfoPageObject(driver);
 		customerinfopage.isGenderMailRadioButtonSelected();
 		Assert.assertTrue(customerinfopage.isGenderMailRadioButtonSelected());
-		
 		customerinfopage.getFirstNameTextBoxValue();
-		Assert.assertEquals(customerinfopage.getFirstNameTextBoxValue(), "Corona BCD");
+		Assert.assertEquals(customerinfopage.getFirstNameTextBoxValue(), firstname);
 		customerinfopage.getLastNameTextBoxValue();
-		Assert.assertEquals(customerinfopage.getLastNameTextBoxValue(), "Virus ABC");
-
-		customerinfopage.getSelectedTextInDayDropdown()
-		Assert.assertEquals(getFirstSelectedTextInDayDropDown, "10");
-		Assert.assertEquals(getFirstSelectedTextInMonthDropDown, "January");
-		Assert.assertEquals(getFirstSelectedTextInYearDropDown, "1990");
-
-		Assert.assertEquals(customerinfopage.getEmailTextboxValue(), "Corona virus 20");
-		Assert.assertEquals(customerinfopage.getCompanyTextboxValue(), "test26092020@gmail.com");
-
+		Assert.assertEquals(customerinfopage.getLastNameTextBoxValue(), lastname);
+		Assert.assertEquals(customerinfopage.getFirstSelectedTextInDayDropDown(), day);
+		Assert.assertEquals(customerinfopage.getFirstSelectedTextInMonthDropDown(), month);
+		Assert.assertEquals(customerinfopage.getFirstSelectedTextInYearDropDown(), year);
+		Assert.assertEquals(customerinfopage.getEmailTextboxValue(), email);
+		Assert.assertEquals(customerinfopage.getCompanyTextboxValue(), company);
 		Assert.assertTrue(customerinfopage.isNewsletterCheckboxSelected());
 	}
 

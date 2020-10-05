@@ -3,14 +3,13 @@
 <suite name="Failed suite [Nop Commerce]">
   <test name="Run on Firefox(failed)">
     <classes>
-      <class name="DRY.LV02_Login01_Register_and_Login_AbstractPage_01">
+      <class name="demo.nopcommerce.user.LV03_Register_and_Login_Page_Object">
         <methods>
           <include name="TC03_View_My_Account"/>
-          <include name="TC01_Register_successfully"/>
           <include name="beforeTest"/>
-          <include name="TC02_Login"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- DRY.LV02_Login01_Register_and_Login_AbstractPage_01 -->
+      </class> <!-- demo.nopcommerce.user.LV03_Register_and_Login_Page_Object -->
     </classes>
   </test> <!-- Run on Firefox(failed) -->
 </suite> <!-- Failed suite [Nop Commerce] -->
